@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  keycloak:
+    container_name: "keycloak"
+    image: "quay.io/keycloak/keycloak:20.0.3"
+    ports:
+      - "8180:8180"
+    environment:
+      KEYCLOAK_ADMIN: "admin"
+      KEYCLOAK_ADMIN_PASSWORD: "admin"
+    volumes:
+      - ./data/elytron-realm.json:/opt/keycloak/data/import/elytron-realm.json
+    command:
+      - "start-dev"
+      - "--http-port"
+      - "8180"
+      - "--import-realm"
+  base-elytron-wildfly:
+    container_name: "base-elytron-wildfly"
+    build:
+      context: docker/base-elytron-wildfly/target/classes
+    ports:
+      - "8080:8080"
+      - "8787:8787"
+      - "9990:9990"
+  keycloak-adapter-wildfly:
+    container_name: "keycloak-adapter-wildfly"
+    build:
+      context: docker/keycloak-adapter-wildfly/target/classes
+    ports:
+      - "8081:8080"
+      - "8788:8787"
+      - "9991:9990"
