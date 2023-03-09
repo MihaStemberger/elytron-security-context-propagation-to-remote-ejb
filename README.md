@@ -68,5 +68,5 @@ If any changes are made to a DockerFile:
     ```
 4. start docker containers: 
     ```bash 
-   docker comose up
+   docker compose up
     ```
