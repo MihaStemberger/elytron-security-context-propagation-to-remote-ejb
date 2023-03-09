@@ -27,14 +27,15 @@ or execute tests via cli
 mvn verify -DskipTests=false
 ```
 
-The result of the tests will show, that with usage of Keycloak Adapter, the Remote EJB gets a resolved principal. With
-OIDC the principal remains anonymous.
+The result of the tests will show, that with usage of Keycloak Adapter, the Remote EJB gets a resolved principal.
 ```text
 HTTP Status: 200
 HTTP principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.keycloak.KeycloakPrincipal
 Local EJB principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.keycloak.KeycloakPrincipal
 Remote EJB principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.keycloak.KeycloakPrincipal
-
+```
+With out of the box standalone-full.xml, the principal remains anonymous.
+```text
 HTTP Status: 200
 HTTP principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.wildfly.security.http.oidc.OidcPrincipal
 Local EJB principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.wildfly.security.http.oidc.OidcPrincipal
