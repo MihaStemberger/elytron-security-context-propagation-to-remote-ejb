@@ -18,16 +18,6 @@
             <version>20.0.3</version>
             <type>zip</type>
         </dependency>
-        <dependency>
-            <groupId>com.mihas.security</groupId>
-            <artifactId>service-one-keycloak-adapter-deployment</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>com.mihas.security</groupId>
-            <artifactId>service-two-keycloak-adapter-deployment</artifactId>
-            <type>war</type>
-        </dependency>
     </dependencies>
 
     <build>
@@ -44,18 +34,6 @@
                             <includeArtifactIds>keycloak-wildfly-adapter-dist</includeArtifactIds>
                             <excludeTransitive>true</excludeTransitive>
                             <outputDirectory>${project.build.directory}/classes/dependency/keycloak-adapter</outputDirectory>
-                        </configuration>
-                        <phase>prepare-package</phase>
-                    </execution>
-                    <execution>
-                        <id>copy-deployments</id>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <excludeArtifactIds>keycloak-wildfly-adapter-dist</excludeArtifactIds>
-                            <excludeTransitive>true</excludeTransitive>
-                            <outputDirectory>${project.build.directory}/classes/dependency/deployables</outputDirectory>
                         </configuration>
                         <phase>prepare-package</phase>
                     </execution>

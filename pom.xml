@@ -9,12 +9,9 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>docker</module>
         <module>code</module>
-        <module>code/service-one-oidc-deployment</module>
-        <module>code/service-one-keycloak-adapter-deployment</module>
-        <module>code/service-two-oidc-deployment</module>
-        <module>code/service-two-keycloak-adapter-deployment</module>
+        <module>deployments</module>
+        <module>docker</module>
     </modules>
 
     <properties>

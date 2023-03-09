@@ -21,7 +21,12 @@ mvn clean install
 docker compose up
 ```
 
-**3. Run [ServletTest](code/tests/src/test/java/com/mihas/security/tests/ServletTest.java)**
+**3. Deploy artifacts**
+```bash
+mvn wildfly:deploy-only
+```
+
+**4. Run [ServletTest](code/tests/src/test/java/com/mihas/security/tests/ServletTest.java)**
 or execute tests via cli
 ```bash
 mvn verify -DskipTests=false

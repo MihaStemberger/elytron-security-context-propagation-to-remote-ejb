@@ -1,7 +1,0 @@
-{
-  "realm": "elitron",
-  "auth-server-url": "http://keycloak:8180/",
-  "ssl-required": "none",
-  "resource": "elitron",
-  "public-client": true
-}
