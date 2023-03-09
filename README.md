@@ -41,7 +41,7 @@ Local EJB principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.keycl
 Remote EJB principal: Name: 9302f4a1-5f37-4699-9971-ca6ff56bebc6, Type: org.keycloak.KeycloakPrincipal
 
 ```
-With out of the box standalone-full.xml, the principal remains anonymous.
+With out of the box standalone-full.xml, the Remote EJB principal remains anonymous.
 ```text
 Sending request to: http://localhost:8080/service-one/
 HTTP Status: 200
