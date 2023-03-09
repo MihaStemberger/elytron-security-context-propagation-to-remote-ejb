@@ -31,6 +31,8 @@ public class ServletTest {
                 .post(Entity.form(loginForm))
                 .readEntity(KeycloakResponse.class);
 
+        System.out.printf("Sending request to: %s\n",
+                          KEYCLOAK_ADAPTER_WILDFLY_SERVLET_LOCATION);
 
         final Response response = ClientBuilder.newClient()
                 .target(KEYCLOAK_ADAPTER_WILDFLY_SERVLET_LOCATION)
@@ -60,6 +62,8 @@ public class ServletTest {
                 .post(Entity.form(loginForm))
                 .readEntity(KeycloakResponse.class);
 
+        System.out.printf("Sending request to: %s\n",
+                          OIDC_WILDFLY_SERVLET_LOCATION);
 
         final Response response = ClientBuilder.newClient()
                 .target(OIDC_WILDFLY_SERVLET_LOCATION)
